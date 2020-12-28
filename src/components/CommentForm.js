@@ -9,16 +9,16 @@ class CommentForm extends React.Component{
      
       onFormSubmit(event){
          event.preventdefault()
-         console.log("Submit information!")
+         
 
       }
-      onInputAndTextAreaChange(event){
+     onInputAndTextAreaChange = (event) => { 
+         const {target:{name,value}}= event
+         
         this.setState({
-            title: event.target.value,
-            comment:event.target.value
-            
+          [name]:value
         })
-        console.log(this.state.title,this.state.comment)
+        
       }
 
 
@@ -28,14 +28,15 @@ class CommentForm extends React.Component{
     <div className="container">
       <form onSubmit={this.onFormSubmit}>
         <div className="lable">
-         <label htmlFor="name">Enter Title</label>
-         <input onChange={this.onInputAndTextAreaChange} type="text" id="name" value={this.state.title}/>
+          <label htmlFor="name">Enter Title</label>
+          <input onChange={this.onInputAndTextAreaChange} type="text" name="title" value={this.state.title}/>
         </div>
          <br/>
         <div className="textarea">
-        <label className="textarea">Enter Comment</label>
-          <textarea onChange={this.onInputAndTextAreaChange} value={this.state.comment}></textarea>
+          <label className="textarea">Enter Comment</label>
+          <textarea onChange={this.onInputAndTextAreaChange} value={this.state.comment} name="comment"></textarea>
         </div>
+        <button>Click Submit</button>
       </form>
 
     </div>
