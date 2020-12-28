@@ -1,6 +1,6 @@
 import React from 'react'
  const DisplayComment = (props) => {
-     console.log(props)
+     console.log(props.newRole)
     return (
         <div className="card">
             <img src="image" alt="avator"/>

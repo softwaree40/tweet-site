@@ -3,10 +3,10 @@ import './App.css';
 import CommentForm from "./components/CommentForm"
 import DisplayComment from  "./components/DisplayComment"
 class App extends React.Component{
-
+   
     handleFormInput = (terms) => {
      
-     console.log(terms)
+     console.log(terms.title)
 
     }
 
