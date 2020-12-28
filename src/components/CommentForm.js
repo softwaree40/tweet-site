@@ -1,16 +1,15 @@
 import React from "react"
 
-
 class CommentForm extends React.Component{
           state = {
              title: "",
              comment: ""
           }
      
-      onFormSubmit(event){
-         event.preventdefault()
-         
-
+      onFormSubmit = (event)=> {
+          
+         event.preventDefault()
+          this.props.newHandle(this.state)
       }
      onInputAndTextAreaChange = (event) => { 
          const {target:{name,value}}= event
@@ -38,7 +37,6 @@ class CommentForm extends React.Component{
         </div>
         <button>Click Submit</button>
       </form>
-
     </div>
     )
 
